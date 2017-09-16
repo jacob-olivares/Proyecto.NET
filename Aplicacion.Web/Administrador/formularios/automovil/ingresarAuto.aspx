@@ -15,8 +15,6 @@
                 <asp:TableRow>
                     <asp:TableCell>Marca</asp:TableCell>
                     <asp:TableCell><asp:TextBox ID="txtMarca" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator id="validarMarca" ForeColor="Red" ErrorMessage="Ingrese marca" 
-                            runat="server" ControlToValidate="txtMarca" />
                     </asp:TableCell>
                     
                 </asp:TableRow>
@@ -28,24 +26,53 @@
                                 
                 <asp:TableRow>
                     <asp:TableCell>Categoria</asp:TableCell>
-                    <asp:TableCell><asp:DropDownList ID="categoria" runat="server">
+                    <asp:TableCell><asp:DropDownList ID="ddlcategoria" runat="server">
                                     <asp:ListItem value="0">Seleccione</asp:ListItem>
-                                    <asp:ListItem value="1">Camion</asp:ListItem>
-                                    <asp:ListItem value="2">Automovil</asp:ListItem>
-                                    <asp:ListItem value="3">Camioneta</asp:ListItem>
-                                    <asp:ListItem value="4">Van</asp:ListItem>
-                                    <asp:ListItem value="5">Furgon</asp:ListItem>
+                                    <asp:ListItem value="Camion">Camion</asp:ListItem>
+                                    <asp:ListItem value="Automovil">Automovil</asp:ListItem>
+                                    <asp:ListItem value="Camioneta">Camioneta</asp:ListItem>
+                                    <asp:ListItem value="Van">Van</asp:ListItem>
+                                    <asp:ListItem value="Furgon">Furgon</asp:ListItem>
                                    </asp:DropDownList></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
                     <asp:TableCell>
-                        Telefono contacto:
+                        Tipo Combustible
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="tipoCombustible" runat="server">
+                            <asp:ListItem Value="0">Seleccione</asp:ListItem>
+                            <asp:ListItem Value="Diesel">Diesel</asp:ListItem>
+                            <asp:ListItem Value="Bencina">Bencina</asp:ListItem>
+                            <asp:ListItem Value="Gas">Gas</asp:ListItem>
+                            <asp:ListItem Value="Electricidad">Electricidad</asp:ListItem>
+                        </asp:DropDownList>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>Descripcion</asp:TableCell>
+                    <asp:TableCell><asp:TextBox ID="txtDesc" runat="server" TextMode="MultiLine" Rows="10"></asp:TextBox></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Button ID="btn_Enviar" runat="server" Text="Ingresar Automovil" OnClick="btn_Enviar_Click"/>
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
+
+            <!-- Validaciones -->                     
+            <asp:RequiredFieldValidator id="validarMarca" ForeColor="Red" ErrorMessage="Ingrese marca" 
+                            runat="server" ControlToValidate="txtMarca" /><br />
+            <asp:RequiredFieldValidator id="validarModelo" ForeColor="Red" ErrorMessage="Ingrese modelo" 
+                            runat="server" ControlToValidate="txtModelo" /><br />
+            <asp:RequiredFieldValidator id="validarDescripcion" ForeColor="Red" ErrorMessage="Ingrese descripcion" 
+                            runat="server" ControlToValidate="txtDesc" /><br />
+
+            <!-- Label que mostrará errores o confirmacion-->
+            <asp:Label ID="lblRespuesta" runat="server" />
         </div>
     </form>
 </body>

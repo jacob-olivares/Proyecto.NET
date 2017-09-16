@@ -19,7 +19,7 @@
     </form>
     <h1>Bienvenido Administrador!!</h1>
     <h2>Menu automovil</h2><br />
-    <a href="ingresarAuto.aspx">Ingresar Automovil</a><br />
+    <a href="formularios/automovil/ingresarAuto.aspx">Ingresar Automovil</a><br />
     <a href="eliminarAuto">Eliminar Automovil</a><br />
     <a href="modificarAuto">Modificar Automovil</a><br />
     <a href="modificarAuto">Buscar Automovil</a><br />

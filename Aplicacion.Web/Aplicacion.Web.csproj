@@ -77,7 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Administrador\formularios\automovil\ingresarAuto.aspx" />
-    <Content Include="Administrador\login.aspx" />
+    <Content Include="login.aspx" />
     <Content Include="Web.config" />
     <Content Include="Administrador\index.aspx" />
   </ItemGroup>
@@ -89,11 +89,11 @@
     <Compile Include="Administrador\formularios\automovil\ingresarAuto.aspx.designer.cs">
       <DependentUpon>ingresarAuto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Administrador\login.aspx.cs">
+    <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Administrador\login.aspx.designer.cs">
+    <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,6 +108,12 @@
   <ItemGroup>
     <Folder Include="Cliente\" />
     <Folder Include="Vendedor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BibliotecaDeClases\BibliotecaDeClases.csproj">
+      <Project>{674606d5-2955-4c7d-8c95-c9c99e53e282}</Project>
+      <Name>BibliotecaDeClases</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
