@@ -8,7 +8,7 @@ namespace BibliotecaDeClases.Entidades
     {
         private string marca, modelo, descripcion, categoria, tipoCombustible;
         private int id;
-        private int autoIncremento = 0;
+        private static int autoIncremento = 0;
 
         public Automovil(string marca, string modelo, string descripcion, string categoria, string tipoCombustible)
         {

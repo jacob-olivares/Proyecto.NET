@@ -7,6 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
+        <%if (Session["admin"]!=null)
+        { %>
 <body>
     <asp:SiteMapPath ID="siteMap1" runat="server"></asp:SiteMapPath>
     <form id="form1" runat="server">
@@ -76,4 +78,9 @@
         </div>
     </form>
 </body>
+        <%}
+        else
+        {
+            Response.Redirect("../../../login.aspx");
+        }%>
 </html>
