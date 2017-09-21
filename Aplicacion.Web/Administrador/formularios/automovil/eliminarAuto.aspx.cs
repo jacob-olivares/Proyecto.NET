@@ -16,34 +16,40 @@ namespace Aplicacion.Web.Administrador.formularios.automovil
             List<Automovil> automoviles = new List<Automovil>();
             automoviles = (List<Automovil>)Session["lista_autos"];
 
-
-            if (Session["admin"] != null)
+            try
             {
-                foreach (Automovil auto in automoviles)
+                if (Session["admin"] != null)
                 {
-                    TableRow trow = new TableRow();
-                    tabla.Rows.Add(trow);
+                    foreach (Automovil auto in automoviles)
+                    {
+                        TableRow trow = new TableRow();
+                        tabla.Rows.Add(trow);
 
-                    TableCell tcell = new TableCell();
-                    tcell.Text = auto.Id.ToString();
-                    trow.Cells.Add(tcell);
+                        TableCell tcell = new TableCell();
+                        tcell.Text = auto.Id.ToString();
+                        trow.Cells.Add(tcell);
 
-                    TableCell tcell1 = new TableCell();
-                    tcell1.Text = auto.Modelo.ToString();
-                    trow.Cells.Add(tcell1);
+                        TableCell tcell1 = new TableCell();
+                        tcell1.Text = auto.Modelo.ToString();
+                        trow.Cells.Add(tcell1);
 
-                    TableCell tcell2 = new TableCell();
-                    tcell2.Text = auto.Marca.ToString();
-                    trow.Cells.Add(tcell2);
+                        TableCell tcell2 = new TableCell();
+                        tcell2.Text = auto.Marca.ToString();
+                        trow.Cells.Add(tcell2);
 
-                    TableCell tcell3 = new TableCell();
-                    tcell3.Text = auto.Categoria.ToString();
-                    trow.Cells.Add(tcell3);
+                        TableCell tcell3 = new TableCell();
+                        tcell3.Text = auto.Categoria.ToString();
+                        trow.Cells.Add(tcell3);
 
-                    TableCell tcell4 = new TableCell();
-                    tcell4.Text = auto.TipoCombustible.ToString();
-                    trow.Cells.Add(tcell4);
+                        TableCell tcell4 = new TableCell();
+                        tcell4.Text = auto.TipoCombustible.ToString();
+                        trow.Cells.Add(tcell4);
+                    }
                 }
+            }
+            catch (NullReferenceException ne)
+            {
+                Response.Write("No hay objetos en la lista. " + ne.Message);
             }
 
         }
