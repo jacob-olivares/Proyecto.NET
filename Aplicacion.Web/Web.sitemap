@@ -2,5 +2,10 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="Administrador/index.aspx" title="Pagina de Inicio"  description="">
     <siteMapNode url="Administrador/formularios/automovil/ingresarAuto.aspx" title="Ingresar Auto"  description="" />
+    <siteMapNode url="Administrador/formularios/automovil/eliminarAuto.aspx" title="Eliminar Auto"  description="" />
+    <siteMapNode url="Administrador/formularios/automovil/modificarAuto.aspx" title="Modificar Auto"  description="" />
+  <siteMapNode url="Administrador/formularios/automovil/modificar.aspx" title="Modificar Auto"  description="" />
+  <siteMapNode url="Administrador/formularios/vendedor/eliminarVendedor.aspx" title="Despedir Vendedor"  description="" />
+  <siteMapNode url="Administrador/formularios/vendedor/ingresarVendedor.aspx" title="Contratar Vendedor"  description="" />
   </siteMapNode>
 </siteMap>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ingresarAuto.aspx.cs" Inherits="Aplicacion.Web.Administrador.formularios.automovil.ingresarAuto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="modificar.aspx.cs" Inherits="Aplicacion.Web.Administrador.formularios.automovil.modificar" %>
 
 <!DOCTYPE html>
 
@@ -7,26 +7,26 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
-        <%if (Session["admin"]!=null)
+    <%if (Session["admin"] != null)
         { %>
 <body>
     <asp:SiteMapPath ID="siteMap1" runat="server"></asp:SiteMapPath>
     <form id="form1" runat="server">
         <div>
-            <asp:Table runat="server">
-                <asp:TableRow>
-                    <asp:TableCell>Marca</asp:TableCell>
-                    <asp:TableCell><asp:TextBox ID="txtMarca" runat="server"></asp:TextBox>
-                    </asp:TableCell>
-                    
+            <asp:Table ID="tabla" runat="server">
+                <asp:TableRow ID="trId">
+                    <asp:TableCell>Id: </asp:TableCell>
+                    <asp:TableCell><asp:TextBox ID="txtId" runat="server" ReadOnly="true"></asp:TextBox></asp:TableCell>
                 </asp:TableRow>
-                                
-                <asp:TableRow>
+                <asp:TableRow ID="trMarca">
+                    <asp:TableCell>Marca</asp:TableCell>
+                    <asp:TableCell><asp:TextBox ID="txtMarca" runat="server"></asp:TextBox></asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow ID="trModelo">
                     <asp:TableCell>Modelo</asp:TableCell>
                     <asp:TableCell><asp:TextBox ID="txtModelo" runat="server"></asp:TextBox></asp:TableCell>
                 </asp:TableRow>
-                                
-                <asp:TableRow>
+                <asp:TableRow ID="trCat">
                     <asp:TableCell>Categoria</asp:TableCell>
                     <asp:TableCell><asp:DropDownList ID="ddlcategoria" runat="server">
                                     <asp:ListItem value="0">Seleccione</asp:ListItem>
@@ -37,10 +37,8 @@
                                     <asp:ListItem value="Furgon">Furgon</asp:ListItem>
                                    </asp:DropDownList></asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        Tipo Combustible
-                    </asp:TableCell>
+                <asp:TableRow ID="trTipo">
+                    <asp:TableCell>Tipo de combustible</asp:TableCell>
                     <asp:TableCell>
                         <asp:DropDownList ID="tipoCombustible" runat="server">
                             <asp:ListItem Value="0">Seleccione</asp:ListItem>
@@ -51,36 +49,23 @@
                         </asp:DropDownList>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>Descripcion</asp:TableCell>
+                <asp:TableRow ID="trDesc">
                     <asp:TableCell><asp:TextBox ID="txtDesc" runat="server" TextMode="MultiLine" Rows="10"></asp:TextBox></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
-                    <asp:TableCell>
-                        
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:Button ID="btn_Enviar" runat="server" Text="Ingresar Automovil" OnClick="btn_Enviar_Click"/>
-                    </asp:TableCell>
+                    <asp:TableCell></asp:TableCell>
+                    <asp:TableCell><asp:Button ID="btnEnviar" runat="server" Text="Modificar" OnClick="btnEnviar_Click" /></asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
 
-            <!-- Validaciones -->                     
-            <asp:RequiredFieldValidator id="validarMarca" ForeColor="Red" ErrorMessage="Ingrese marca" 
-                            runat="server" ControlToValidate="txtMarca" /><br />
-            <asp:RequiredFieldValidator id="validarModelo" ForeColor="Red" ErrorMessage="Ingrese modelo" 
-                            runat="server" ControlToValidate="txtModelo" /><br />
-            <asp:RequiredFieldValidator id="validarDescripcion" ForeColor="Red" ErrorMessage="Ingrese descripcion" 
-                            runat="server" ControlToValidate="txtDesc" /><br />
-
-            <!-- Label que mostrará errores o confirmacion-->
-            <asp:Label ID="lblRespuesta" runat="server" />
         </div>
     </form>
 </body>
-        <%}
+    <%
+        }
         else
         {
             Response.Redirect("../../../login.aspx");
-        }%>
+        }
+        %>
 </html>

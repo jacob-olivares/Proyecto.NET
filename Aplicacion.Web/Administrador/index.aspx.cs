@@ -16,10 +16,6 @@ namespace Aplicacion.Web
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
-            if(siteMap.SelectedValue == "0")
-            {
-                Response.Redirect("formularios/automovil/ingresarAuto.aspx");
-            }
         }
     }
 }

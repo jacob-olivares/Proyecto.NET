@@ -20,17 +20,16 @@ namespace Aplicacion.Web.Administrador.formularios.automovil
         {
 
             //Recibo los parametros
-            string marca = txtMarca.Text;
-            string modelo = txtModelo.Text;
-            string categoria = ddlcategoria.SelectedValue;
-            string tipoCom = tipoCombustible.SelectedValue;
-            string desc = txtDesc.Text;
+            string marca = Request.Form["txtMarca"];
+            string modelo = Request.Form["txtModelo"];
+            string categoria = Request.Form["ddlcategoria"];
+            string tipoCom = Request.Form["tipoCombustible"];
+            string desc = Request.Form["txtDesc"];
+
+            List<Automovil> listaAutomoviles = new List<Automovil>();
 
             //booleano para evaluar combobox's
             Boolean tiene_error = false;
-
-            //Lista de automoviles
-            List<Automovil> listaAutomoviles = new List<Automovil>();
 
             //validaciones extras, ademas de los combobox
             if (categoria.Equals("0"))
@@ -49,17 +48,21 @@ namespace Aplicacion.Web.Administrador.formularios.automovil
             {
                 //Creo un automovil y lo guardo en una lista
                 Automovil automovil = new Automovil(marca, modelo, desc, categoria, tipoCom);
+
+                //Guardo en una sesion la lista de los automoviles
+                if (Session["lista_autos"] != null)
+                {
+                    listaAutomoviles = (List<Automovil>) Session["lista_autos"];
+                }
+
                 listaAutomoviles.Add(automovil);
 
+                Session["lista_autos"] = listaAutomoviles;
                 //Redirijo a la pagina y mando mensaje
                 Response.Redirect("ingresarAuto.aspx");
                 lblRespuesta.Text = "Agregado Correctamente";
+
             }
-
-            //Guardo en una sesion la lista de los automoviles
-            Session["lista_autos"] = listaAutomoviles;
-
-
         }
     }
 }
