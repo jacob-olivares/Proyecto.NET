@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -73,14 +74,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="Administrador\formularios\automovil\eliminarAuto.aspx" />
-    <Content Include="Administrador\formularios\automovil\modificar.aspx" />
-    <Content Include="Administrador\formularios\automovil\modificarAuto.aspx" />
-    <Content Include="Administrador\formularios\vendedor\buscarVendedor.aspx" />
-    <Content Include="Administrador\formularios\vendedor\eliminar.aspx" />
-    <Content Include="Administrador\formularios\vendedor\eliminarVendedor.aspx" />
-    <Content Include="Administrador\formularios\vendedor\ingresarVendedor.aspx" />
-    <Content Include="Administrador\formularios\vendedor\listaVendedores.aspx" />
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
@@ -104,55 +97,6 @@
     <Compile Include="Administrador\formularios\automovil\ingresarAuto.aspx.designer.cs">
       <DependentUpon>ingresarAuto.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Administrador\formularios\automovil\modificar.aspx.cs">
-      <DependentUpon>modificar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administrador\formularios\automovil\modificar.aspx.designer.cs">
-      <DependentUpon>modificar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Administrador\formularios\automovil\modificarAuto.aspx.cs">
-      <DependentUpon>modificarAuto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administrador\formularios\automovil\modificarAuto.aspx.designer.cs">
-      <DependentUpon>modificarAuto.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Administrador\formularios\vendedor\buscarVendedor.aspx.cs">
-      <DependentUpon>buscarVendedor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administrador\formularios\vendedor\buscarVendedor.aspx.designer.cs">
-      <DependentUpon>buscarVendedor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Administrador\formularios\vendedor\eliminar.aspx.cs">
-      <DependentUpon>eliminar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administrador\formularios\vendedor\eliminar.aspx.designer.cs">
-      <DependentUpon>eliminar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Administrador\formularios\vendedor\eliminarVendedor.aspx.cs">
-      <DependentUpon>eliminarVendedor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administrador\formularios\vendedor\eliminarVendedor.aspx.designer.cs">
-      <DependentUpon>eliminarVendedor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Administrador\formularios\vendedor\ingresarVendedor.aspx.cs">
-      <DependentUpon>ingresarVendedor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administrador\formularios\vendedor\ingresarVendedor.aspx.designer.cs">
-      <DependentUpon>ingresarVendedor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Administrador\formularios\vendedor\listaVendedores.aspx.cs">
-      <DependentUpon>listaVendedores.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administrador\formularios\vendedor\listaVendedores.aspx.designer.cs">
-      <DependentUpon>listaVendedores.aspx</DependentUpon>
-    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -168,11 +112,15 @@
     <Compile Include="Administrador\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vendedor\formularios\ingresoVendedor.aspx.cs">
+      <DependentUpon>ingresoVendedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendedor\formularios\ingresoVendedor.aspx.designer.cs">
+      <DependentUpon>ingresoVendedor.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Cliente\" />
-    <Folder Include="Vendedor\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BibliotecaDeClases\BibliotecaDeClases.csproj">
       <Project>{674606d5-2955-4c7d-8c95-c9c99e53e282}</Project>
