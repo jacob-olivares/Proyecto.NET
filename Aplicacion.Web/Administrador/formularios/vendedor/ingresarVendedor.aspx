@@ -25,7 +25,7 @@
                                 
                 <asp:TableRow>
                     <asp:TableCell>
-                        Nombre
+                        Nombre:
                     </asp:TableCell>
                     <asp:TableCell>
                         <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
